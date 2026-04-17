@@ -1,0 +1,64 @@
+{
+  "name": "zyno_ecom",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "homepage": "https://gitlab.com/gauravEM/zyno_ecom#readme",
+  "bugs": {
+    "url": "https://gitlab.com/gauravEM/zyno_ecom/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/gauravEM/zyno_ecom.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "migrate:main": "sequelize-cli db:migrate --env development --migrations-path src/migrations/zyno_ecom",
+    "migrate:template": "sequelize-cli db:migrate --env template --migrations-path src/migrations/zyno_ecom_template",
+    "migrate:main:undo": "sequelize-cli db:migrate:undo:all --env development --migrations-path src/migrations/zyno_ecom",
+    "migrate:template:undo": "sequelize-cli db:migrate:undo:all --env template --migrations-path src/migrations/zyno_ecom_template",
+    "migrate:all": "npm run migrate:main && npm run migrate:template",
+    "seed:main": "sequelize-cli db:seed:all --env development --seeders-path src/seeders/zyno_ecom",
+    "seed:template": "sequelize-cli db:seed:all --env template --seeders-path src/seeders/zyno_ecom_template",
+    "seed:all": "npm run seed:main && npm run seed:template",
+    "db:init": "node src/utils/initDb.js",
+    "start": "npm run db:init && npm run migrate:all && npm run seed:all && nodemon server.js"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@types/node": "^25.5.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "chalk": "^4.1.2",
+    "class-transformer": "^0.5.1",
+    "cors": "^2.8.6",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "f": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "joi": "^18.1.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "mysql2": "^3.20.0",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "pg": "^8.20.0",
+    "pg-hstore": "^2.3.4",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.8",
+    "slugify": "^1.6.8",
+    "tedious": "^19.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2",
+    "umzug": "^3.8.2",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.5"
+  }
+}

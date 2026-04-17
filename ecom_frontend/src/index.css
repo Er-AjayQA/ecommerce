@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 217 91% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 92%;
+    --secondary-foreground: 215 25% 20%;
+
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 25% 88%;
+    --input: 214 25% 88%;
+    --ring: 217 91% 35%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 217 91% 35%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 217 91% 35%;
+    --sidebar-accent: 217 91% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 91% 30%;
+    --sidebar-ring: 142 76% 36%;
+
+    --chart-1: 217 91% 35%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 70% 50%;
+    --chart-5: 340 75% 55%;
+
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1);
+  }
+
+  .dark {
+    --background: 217 33% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 28% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 28% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 28% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 28% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 142 76% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 217 28% 22%;
+    --input: 217 28% 22%;
+    --ring: 217 91% 50%;
+
+    --sidebar-background: 217 33% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 28% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 28% 22%;
+    --sidebar-ring: 142 76% 45%;
+
+    --chart-1: 217 91% 50%;
+    --chart-2: 142 76% 45%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 280 70% 60%;
+    --chart-5: 340 75% 65%;
+
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* globals.css ya sidebar css file me */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* ====== GLOBAL SCROLLBAR HIDE ====== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE */
+body {
+  -ms-overflow-style: none;
+}
+
+/* remove hover / focus / active */
+.no-hover:hover,
+.no-hover:focus,
+.no-hover:active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Light + Dark mode = SAME BACKGROUND AS HEADER */
+.static-bg {
+  background-color: hsl(var(--card)) !important;
+  border-color: hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* hover remove */
+.no-hover:hover,
+.no-hover:focus,
+.no-hover:active {
+  background-color: hsl(var(--card)) !important;
+  box-shadow: none !important;
+}
+
+/* input icon visibility in dark mode */
+.dark input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+}
+
+/* Placeholder color */
+input::placeholder {
+  color: #462828;
+  opacity: 0.5;
+}
+
+/* Autofill override for Chrome/Safari */
+/* input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #1e293b inset;
+  -webkit-text-fill-color: white;
+} */
+
+/* Infinite Rotation */
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth transition for the settings panel */
+.settings-panel-transition {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Backdrop fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Settings icon rotation animation & Setting Tab */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.toggle-slider {
+  background-color: #3b82f6;
+}
+
+input:checked+.toggle-slider:before {
+  transform: translateX(20px);
+}

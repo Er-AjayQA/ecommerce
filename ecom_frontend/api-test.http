@@ -1,0 +1,23 @@
+### Register API
+POST http://localhost:5000/api/v1/tenants/register_Tenant_User
+Content-Type: application/json
+x-tenant-domain: http://localhost:5173
+
+{
+    "organizationName": "Zyno Book",
+    "domain": "http://localhost:5173",
+    "name": "chhotu kumar",
+    "email": "chhotu@gmail.com",
+    "password": "chhotu@123",
+    "phone": "9898989898"
+}
+
+### Login API
+POST http://localhost:5000/api/v1/tenants/login_Tenant_User
+Content-Type: application/json
+x-tenant-domain: http://localhost:5173
+
+{
+  "email": "chhotu@gmail.com",
+  "password": "chhotu@123"
+}
