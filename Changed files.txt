@@ -1,0 +1,52 @@
+Haan, BE aur Admin source files ki list ye hai. Main dist/, .next/, generated build files ko include nahi kar raha.
+
+BE: ecom_api
+
+tenant.dto.js
+auth.middleware.js
+tenantMiddleware.js
+website.routes.js
+tenant.controller.js
+tenant.routes.js
+tenant_design.controller.js
+tenant_design.routes.js
+productController.js
+collection.controller.js
+couponController.js
+orderController.js
+Note: orderController.js mein guest order wala change add karke phir tumhare instruction ke baad remove kar diya tha. Final flow mein cart/order ka new route/controller nahi hai.
+
+Admin: ecom_frontend
+
+menusContext.jsx
+TemplatePreviewCard.jsx
+TemplateStorefrontPreview.jsx
+LayoutPreviewCard.jsx
+layouts.js
+templates.js
+designService.js
+productService.js
+collectionService.js
+storefront-content.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+Missing website-facing APIs ya integration:
+Cart website integration
+Guest cart support, agar user login ke bina cart chahiye
+Wishlist website integration
+Search API or filtered products API exposed for website
+Product recommendations/related products
+Policy/page content APIs
+SEO metadata APIs for product/collection pages
+Checkout/order creation flow on website
